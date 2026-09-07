@@ -1,17 +1,22 @@
 ---
+import Font from "astro/components/Font.astro";
+import "../styles/global.css";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/Autentica/favicon.svg" />
 		<link rel="icon" href="/Autentica/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Autentica</title>
 	</head>
-	<body>
+	<body style="height: 300vh">
+		<Font cssVariable="--font-display" />
+		<Font cssVariable="--font-body" />
+
 		<slot />
 	</body>
 </html>
