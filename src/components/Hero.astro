@@ -122,4 +122,27 @@ import landingItalia from "../assets/images/landing_italia.jpg";
         color: var(--c-ink);
         background-color: var(--c-cream);
     }
+
+    @media (max-width: 850px) {
+        .hero-content {
+            margin-top: var(--space-xl);
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-img-wrapper {
+            background:
+                    linear-gradient(
+                            104deg,
+                            rgb(64 33 20 / 0.86) 0%,
+                            rgb(166 78 46 / 0.72) 65%,
+                            rgb(166 78 46 / 0.12) 100%
+                    ),
+                    linear-gradient(to top, rgb(64 33 20 / 0.5), transparent 45%);
+        }
+
+        .top-action {
+            justify-content: space-between;
+        }
+    }
 </style>
