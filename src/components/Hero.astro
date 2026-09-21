@@ -1,7 +1,125 @@
 ---
+import Image from "astro/components/Image.astro";
+import landingItalia from "../assets/images/landing_italia.jpg";
 ---
 
+<section class="hero">
+    <Image src={landingItalia} alt="Landing Italia" class="hero-img-background" />
+    <div class="hero-img-wrapper"></div>
 
-<h1>Autentica</h1>
+    <div class="hero-content flex column">
+        <p class="top-title">Expériences de voyages sur mesure en Italie</p>
 
-<p>lorem ipsum</p>
+        <h1 class="title">L’Italie comme vous ne l’avez jamais imaginée</h1>
+
+        <p class="title-description">
+            Des voyages sur mesure façonnés autour de vos envies, de mes adresses préférées et d’inspirations locales
+            pour découvrir une Italie authentique, loin des itinéraires classiques.
+        </p>
+
+        <div class="top-action flex row">
+
+            <button class="learn-more">
+                En savoir plus
+            </button>
+
+
+            <button class="contact-me">
+                Contactez-moi
+            </button>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hero {
+        position: relative;
+        margin-top: calc(var(--header-h) * -1);
+        background-color: var(--c-terracotta-deep);
+        height: 100dvh;
+        isolation: isolate;
+
+        padding-block: var(--space-2xl);
+    }
+
+    .hero-img-background,
+    .hero-img-wrapper {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
+    .hero-img-background {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-img-wrapper {
+        background:
+            linear-gradient(
+                    104deg,
+                    rgb(64 33 20 / 0.86) 0%,
+                    rgb(166 78 46 / 0.72) 50%,
+                    rgb(166 78 46 / 0.12) 90%,
+                    transparent 100%
+            ),
+            linear-gradient(to top, rgb(64 33 20 / 0.5), transparent 45%);
+    }
+
+    .hero-content {
+        padding-inline: var(--space-xl);
+        color: var(--c-cream);
+        font-size: var(--step-0);
+        width: 60%;
+
+        gap: var(--space-s);
+    }
+
+    .top-title {
+        text-transform: uppercase;
+        font-style: var(--step--1);
+    }
+
+    .title-description {
+        font-size: var(--step-1);
+    }
+
+    .top-action {
+        gap: var(--space-s);
+    }
+
+    .top-action > button {
+        border-radius: var(--radius-pill);
+        transition: 300ms ease-in-out;
+
+        font-size: var(--step--1);
+        text-transform: uppercase;
+        font-weight: 400;
+
+        padding-inline: var(--space-m);
+        padding-block: var(--space-xs);
+    }
+
+    .top-action > button:hover {
+        transform: translateY(-2px);
+    }
+
+    .learn-more {
+        background-color: var(--c-cream);
+    }
+
+    .learn-more:hover {
+        background-color: var(--c-limestone);
+    }
+
+    .contact-me {
+        border: 1px solid var(--c-cream);
+        color: var(--c-cream);
+    }
+
+    .contact-me:hover {
+        color: var(--c-ink);
+        background-color: var(--c-cream);
+    }
+</style>

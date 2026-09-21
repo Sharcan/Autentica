@@ -62,7 +62,6 @@ html {
 }
 
 body {
-    background-color: var(--c-terracotta);
     color: var(--c-ink);
 
     font-family: var(--font-body);
