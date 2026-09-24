@@ -69,6 +69,9 @@ body {
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     line-height: 1.65;
+
+    background: var(--c-cream);
+    min-height: 100dvh;
 }
 
 ul, ol {
