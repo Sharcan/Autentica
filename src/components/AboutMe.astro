@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import aubin from "../assets/images/image00015.jpeg";
+import SectionTitle from "./SectionTitle.astro";
+---
+
+<section class="about-me flex row" id="about-me">
+    <div class="portrait">
+        <Image src={aubin} alt="Aubin de dos lol" width={500} />
+    </div>
+
+    <div>
+        <SectionTitle message="qui suis-je" />
+    </div>
+</section>
+
+
+<style>
+
+    section.about-me {
+        padding: var(--space-2xl);
+        gap: var(--space-2xl);
+    }
+
+    .portrait {
+        position: relative;
+    }
+
+    .portrait::before {
+        position: absolute;
+        content: "";
+
+        inset: 0;
+
+        border: 1px solid var(--c-taupe);
+
+        transform: translate(20px, 20px);
+        z-index: -1;
+    }
+
+</style>
