@@ -1,0 +1,30 @@
+---
+const { message } = Astro.props;
+---
+
+<div class="wrapper flex row align-center">
+    <div class="section-bar"></div>
+    <span class="section-title">{message}</span>
+    <div class="section-bar"></div>
+</div>
+
+
+<style>
+    .wrapper {
+        gap: var(--space-xs);
+    }
+
+    .section-title {
+        font-size: 1rem;
+        color: var(--c-terracotta);
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+    }
+
+    .section-bar {
+        width: 25px;
+        height: 1px;
+        background-color: var(--c-terracotta);
+    }
+</style>
