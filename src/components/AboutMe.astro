@@ -2,45 +2,48 @@
 import Image from "astro/components/Image.astro";
 import aubin from "../assets/images/image00015.jpeg";
 import SectionTitle from "./SectionTitle.astro";
+import SectionLayout from "../layouts/SectionLayout.astro";
 ---
 
-<section class="about-me flex row" id="about-me">
-    <div class="portrait">
-        <div class="figure">
-            <Image
-                    src={aubin}
-                    alt="Aubin de dos lol"
-                    width={450}
-            />
+<SectionLayout topSection bottomSection id="about-me">
+    <section class="about-me flex row">
+        <div class="portrait">
+            <div class="figure">
+                <Image
+                        src={aubin}
+                        alt="Aubin de dos lol"
+                        width={450}
+                />
+            </div>
         </div>
-    </div>
 
-    <div class="content">
-        <SectionTitle message="qui suis-je" />
-        <h2 class="title">Une double culture, une même passion</h2>
+        <div class="content">
+            <SectionTitle message="qui suis-je" />
+            <h2 class="title">Une double culture, une même passion</h2>
 
-        <div class="flex column description">
-            <p>
-                Je suis née en France, mais l’Italie a toujours fait partie de mon histoire.Mes racines m’ont
-                appris à chercher les villages confidentiels, les tables familiales, les hôtels de caractères et
-                ces lieux où l’on prend le temps de vivre.
-            </p>
+            <div class="flex column description">
+                <p>
+                    Je suis née en France, mais l’Italie a toujours fait partie de mon histoire.Mes racines m’ont
+                    appris à chercher les villages confidentiels, les tables familiales, les hôtels de caractères et
+                    ces lieux où l’on prend le temps de vivre.
+                </p>
 
-            <p>
-                Mon parcours dans l’hôtellerie haut de gamme, m’ a permis de développer une
-                connaissance approfondie des établissements d’exception, de l’art de recevoir et des
-                expériences qui font la différence.Cette expertise me permet aujourd’hui de sélectionner
-                avec exigence des adresses qui allients authenticité, élégance et qualité de service.
-            </p>
+                <p>
+                    Mon parcours dans l’hôtellerie haut de gamme, m’ a permis de développer une
+                    connaissance approfondie des établissements d’exception, de l’art de recevoir et des
+                    expériences qui font la différence.Cette expertise me permet aujourd’hui de sélectionner
+                    avec exigence des adresses qui allients authenticité, élégance et qualité de service.
+                </p>
 
-            <p>
-                AUTENTICA est née de cette double culture et de cette passion. Je crée des voyages sur
-                mesure pour faire découvrir une Italie sincère, raffinée et profondément humaine, loin des
-                itinéraires standardisés.
-            </p>
+                <p>
+                    AUTENTICA est née de cette double culture et de cette passion. Je crée des voyages sur
+                    mesure pour faire découvrir une Italie sincère, raffinée et profondément humaine, loin des
+                    itinéraires standardisés.
+                </p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+</SectionLayout>
 
 
 <style>
@@ -51,7 +54,6 @@ import SectionTitle from "./SectionTitle.astro";
     }
 
     section.about-me {
-        padding: var(--space-2xl);
         gap: var(--space-2xl);
     }
 

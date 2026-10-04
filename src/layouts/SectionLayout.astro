@@ -1,0 +1,25 @@
+---
+const { topSection = false, bottomSection = false, id } = Astro.props;
+---
+
+<section class="wrapper"
+     class:list={{ wrapper: true, 'top-section': topSection, 'bottom-section': bottomSection }}
+    id={id}
+>
+    <slot />
+</section>
+
+
+<style>
+    .wrapper {
+        padding-inline: var(--space-2xl);
+    }
+
+    .top-section {
+        padding-top: var(--space-2xl);
+    }
+
+    .bottom-section {
+        padding-bottom: var(--space-2xl);
+    }
+</style>
