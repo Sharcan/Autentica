@@ -22,7 +22,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
             <h2 class="title">Une double culture, une même passion</h2>
 
             <div class="flex column description">
-                <p>
+                <p class="who-am-i">
                     Je suis née en France, mais l’Italie a toujours fait partie de mon histoire.Mes racines m’ont
                     appris à chercher les villages confidentiels, les tables familiales, les hôtels de caractères et
                     ces lieux où l’on prend le temps de vivre.
@@ -96,5 +96,15 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 
     .description {
         gap: var(--space-m);
+    }
+
+    .who-am-i:first-letter {
+        color: var(--c-terracotta);
+        font-weight: 400;
+        font-size: var(--step-4);
+        float: left;
+        line-height: 0.84;
+
+        font-family: var(--font-display);
     }
 </style>
