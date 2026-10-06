@@ -1,9 +1,74 @@
 ---
-
 import SectionTitle from "./SectionTitle.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
+import ProcessStep from "./ProcessStep.astro";
+import processStep from "../assets/data/process-step.json";
 ---
 
-<SectionLayout id="process">
-    <SectionTitle message="La méthode" />
+<SectionLayout id="formula" topSection>
+    <div class="flex column align-center wrapper">
+        <SectionTitle message="Formules" />
+
+        <h2 class="title font-display">
+            Comment ça fonctionne ?
+        </h2>
+
+        <div class="hr"></div>
+
+        <div class="process flex justify-between">
+            {
+                processStep.map(({index, title, description, details}) => (
+                    <div class="process-wrapper">
+                        <ProcessStep index={index} title={title} description={description} details={details} />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
 </SectionLayout>
+
+
+<style>
+    .wrapper {
+        gap: var(--space-m);
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .process-wrapper {
+        width: 30%;
+    }
+
+    .hr {
+        width: 100%;
+        height: 1px;
+        background-color: var(--c-taupe);
+    }
+
+    @media (max-width: 860px) {
+        .process {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .process-wrapper {
+            width: 100%;
+            position: relative;
+            margin-block: var(--space-m);
+        }
+
+        .process-wrapper:not(:first-child)::before {
+            position: absolute;
+            left: 0;
+            right: 0;
+
+            top: calc(-1 * var(--space-s));
+
+            content: "";
+            height: 1px;
+            background-color: var(--c-taupe);
+        }
+    }
+</style>

@@ -1,0 +1,85 @@
+---
+interface Props {
+    index: string;
+    title: string;
+    description: string;
+    details?: {subTitle: string; subDescription: string;}[];
+}
+
+const { index, title, description, details } = Astro.props;
+
+---
+
+<article class="flex column">
+    <span class="index-step font-display">{index}</span>
+
+    <span class="title font-display">{title}</span>
+
+    <span class="description">{description}</span>
+
+    {
+        details?.length && (
+            <>
+                <p class="details-title uppercase spaced-letters">Delais de livraison</p>
+                <ul>
+                    {
+                        details.map(({subTitle, subDescription}) => (
+                            <li class="flex column align-center">
+                                <span class="sub-title">{subTitle}</span>
+                                <span class="sub-description font-display">{subDescription}</span>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </>
+        )
+    }
+</article>
+
+
+<style>
+    article {
+        gap: var(--space-s);
+    }
+
+    .index-step {
+        font-size: var(--step-5);
+        color: var(--c-terracotta);
+        line-height: 0.85;
+    }
+
+    .title {
+        font-size: var(--step-3);
+        color: var(--c-ink);
+        line-height: .95;
+    }
+
+    .description {
+        color: var(--c-olive);
+    }
+
+    .details-title {
+        color: var(--c-sage);
+    }
+
+    article > ul > li {
+        max-width: 200px;
+
+        border: 1px solid var(--c-terracotta-soft);
+        border-radius: var(--radius-s);
+
+        padding: var(--space-2xs);
+    }
+
+    article > ul > li:first-child {
+        margin-bottom: var(--space-xs);
+     }
+
+    .sub-title {
+        color: var(--c-sage);
+    }
+
+    .sub-description {
+        color: var(--c-terracotta);
+    }
+</style>

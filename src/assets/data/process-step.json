@@ -1,0 +1,27 @@
+[
+  {
+    "index": "01",
+    "title": "Vous me racontez votre projet",
+    "description": "Tout commence par un échange. Vous me parlez de votre destination, de vos envies, de votre façon de voyager et de l'offre qui vous intéresse. Ensemble, nous nous assurons qu'elle correspond parfaitement à vos attentes."
+  },
+  {
+    "index": "02",
+    "title": "Je crée votre voyage sur mesure",
+    "description": "Une fois votre réservation confirmée, nous échangeons lors d'un appel ou par écrit afin d'affiner chaque détail. Je conçois ensuite votre itinéraire personnalisé ou votre carnet de voyage, entièrement pensé selon vos envies.",
+    "details": [
+      {
+        "subTitle": "Consultation",
+        "subDescription": "sous 24 heures"
+      },
+      {
+        "subTitle": "Itinéraire personnalisé ",
+        "subDescription": "sous 5 jours ouvrés"
+      }
+    ]
+  },
+  {
+    "index": "03",
+    "title": "Vous vivez l'Italie autrement",
+    "description": "Il ne vous reste plus qu'à profiter de votre voyage. Votre carnet vous accompagne tout au long de votre séjour, et je reste disponible si vous avez besoin d'un conseil ou d'une assistance."
+  }
+]

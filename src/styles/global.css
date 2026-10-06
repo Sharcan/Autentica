@@ -143,6 +143,10 @@ h3 {
     justify-content: space-between;
 }
 
+.wrap {
+    flex-wrap: wrap;
+}
+
 .skip-link {
     position: absolute;
     z-index: 100;
@@ -162,6 +166,14 @@ h3 {
 
 .font-display {
     font-family: var(--font-display);
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.spaced-letters {
+    letter-spacing: 0.2rem;
 }
 
 /* REDUCED MOTION */
