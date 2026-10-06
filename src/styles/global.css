@@ -160,6 +160,10 @@ h3 {
     transform: translateX(0);
 }
 
+.font-display {
+    font-family: var(--font-display);
+}
+
 /* REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
     html {

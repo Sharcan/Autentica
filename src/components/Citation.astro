@@ -1,0 +1,63 @@
+---
+
+import OliveBranch from "./OliveBranch.astro";---
+
+
+<section class="citation flex column justify-center align-center">
+    <div class="olive-wrapper">
+        <OliveBranch />
+    </div>
+
+    <p class="font-display">
+        Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
+    </p>
+
+    <span class="to-be-removed">
+        t'as un message à mettre en avant? une citation? une expression ?
+    </span>
+</section>
+
+
+<style>
+    .citation {
+        height: 45dvh;
+
+        background-color: var(--c-olive);
+        padding-block: var(--space-l);
+        padding-inline: var(--space-2xl);
+
+        color: var(--c-cream);
+
+        gap: var(--space-m);
+    }
+
+    .citation > p {
+        font-size: var(--step-3);
+        text-align: center;
+    }
+
+    .citation > p::before {
+        content: "«";
+    }
+
+    .citation > p::after {
+        content: "»";
+    }
+
+    .olive-wrapper {
+        width: 100px;
+        color: var(--c-sand);
+    }
+
+    .to-be-removed {
+        font-size: var(--step--1);
+    }
+
+    @media (max-width: 860px) {
+        .citation > p {
+            font-size: var(--step-2);
+        }
+    }
+
+
+</style>
