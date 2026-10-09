@@ -283,12 +283,13 @@ const links = [
     const headerHtml: HTMLElement | null = document.querySelector('[data-header]');
     const navigationHtml : HTMLElement | null = document.querySelector('[data-navigation]');
     const burgerButton: HTMLElement | null = document.getElementById('burger-btn');
+    const navLinks: HTMLCollection | null = document.getElementsByClassName('nav__link');
     const isOpenClass: string = 'is-open';
     const isScrolledClass: string = 'is-scrolled';
 
     let isBurgerOpen: boolean = false;
 
-    if (headerHtml && navigationHtml && burgerButton) {
+    if (headerHtml && navigationHtml && burgerButton && navLinks) {
         const openBurgerListener = () => {
             isBurgerOpen = !isBurgerOpen;
 
@@ -317,5 +318,9 @@ const links = [
 
            headerHtml.classList.remove(isScrolledClass);
         });
+
+        for (const link of navLinks) {
+            link.addEventListener('click', openBurgerListener);
+        }
     }
 </script>
