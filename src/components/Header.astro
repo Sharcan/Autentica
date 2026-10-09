@@ -21,58 +21,75 @@ const links = [
 
 ---
 
-<header data-header class="header flex row justify-between align-center">
-    <a href="/Autentica" class="wordmark flex column">
+<header data-header class="container">
+    <div class="header flex row justify-between align-center">
+        <a href="/Autentica" class="wordmark flex column">
         <span class="header__title">
             Autentica
         </span>
 
-        <span class="header__subtitle">
+            <span class="header__subtitle">
             Voyages sur mesure en Italie
         </span>
-    </a>
+        </a>
 
-    <button id="burger-btn" type="button" class="burger__btn">
-        <span class="burger__bars"></span>
-    </button>
-
-    <nav data-navigation class="flex row align-center">
-        <ul>
-            {
-                links.map(
-                    (link) =>
-                        <li>
-                            <a href={link.href} class="nav__link">
-                                {link.label}
-                            </a>
-                        </li>
-                )
-            }
-        </ul>
-
-        <button class="contact-me-btn">
-            Contactez-moi
+        <button id="burger-btn" type="button" class="burger__btn">
+            <span class="burger__bars"></span>
         </button>
-    </nav>
+
+        <nav data-navigation class="flex row align-center">
+            <ul>
+                {
+                    links.map(
+                        (link) =>
+                            <li>
+                                <a href={link.href} class="nav__link">
+                                    {link.label}
+                                </a>
+                            </li>
+                    )
+                }
+            </ul>
+
+            <button class="contact-me-btn">
+                Contactez-moi
+            </button>
+        </nav>
+    </div>
+
 </header>
 
 <style>
-    header.header {
-        text-transform: uppercase;
-        padding-block: var(--space-xs);
-        padding-inline: var(--space-xl);
-        color: var(--c-cream);
-
-        position: sticky;
-        inset: 0;
-        height: var(--header-h);
+    .container {
+        position: fixed;
+        top: 0;
+        inset-inline: 0;
         z-index: 50;
+
+        min-height: var(--header-h);
+
+        padding-block: var(--space-xs);
 
         transition: 300ms var(--ease);
     }
 
-    header.header.is-scrolled {
+    .container.is-scrolled {
         background-color: var(--c-cream);
+    }
+
+    .header {
+        text-transform: uppercase;
+        padding-inline: var(--space-xl);
+        color: var(--c-cream);
+
+        margin-inline: auto;
+        width: 100%;
+        max-width: 1160px;
+
+        gap: var(--space-s);
+    }
+
+    .container.is-scrolled .header {
         color: var(--c-ink);
     }
 
@@ -98,9 +115,9 @@ const links = [
         display: none;
     }
 
-    .header.is-scrolled .burger__bars,
-    .header.is-scrolled .burger__bars::before,
-    .header.is-scrolled .burger__bars::after {
+    .container.is-scrolled .burger__bars,
+    .container.is-scrolled .burger__bars::before,
+    .container.is-scrolled .burger__bars::after {
         background-color: var(--c-ink);
     }
 
@@ -170,7 +187,7 @@ const links = [
         width: 100%;
     }
 
-    [data-header].is-scrolled .nav__link::after {
+    .container.is-scrolled .nav__link::after {
         background-color: var(--c-ink);
     }
 
@@ -192,7 +209,7 @@ const links = [
     }
 
     @media (max-width: 1120px) {
-        header.header {
+        .header {
             padding-inline: var(--space-m);
         }
 
@@ -203,10 +220,10 @@ const links = [
         nav[data-navigation] {
             position: absolute;
 
-            top: var(--header-h);
+            top: 100%;
             left: 0;
 
-            width: 100dvw;
+            width: 100%;
             height: auto;
 
             flex-direction: column;

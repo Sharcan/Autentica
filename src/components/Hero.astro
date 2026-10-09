@@ -23,7 +23,6 @@ import landingItalia from "../assets/images/landing_italia.jpg";
                 En savoir plus
             </button>
 
-
             <button class="contact-me">
                 Contactez-moi
             </button>
@@ -34,7 +33,6 @@ import landingItalia from "../assets/images/landing_italia.jpg";
 <style>
     .hero {
         position: relative;
-        margin-top: calc(var(--header-h) * -1);
         background-color: var(--c-terracotta-deep);
         height: 100dvh;
         isolation: isolate;
@@ -136,13 +134,15 @@ import landingItalia from "../assets/images/landing_italia.jpg";
         background-color: var(--c-cream);
     }
 
+    @media (max-width: 1120px) {
+        .hero-content {
+            padding-inline: var(--space-m);
+        }
+    }
+
     @media (max-width: 850px) {
         .top-title {
             display: none;
-        }
-
-        .hero-content {
-            padding-inline: var(--space-m);
         }
 
         .top-action {
