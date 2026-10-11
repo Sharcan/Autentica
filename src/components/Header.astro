@@ -304,20 +304,23 @@ const links = [
             burgerButton.classList.remove(isOpenClass);
         };
 
+        const isScrolled = () => {
+            const lastScrollYPosition: number = window.scrollY;
+            const headerThreshold: number = 40;
+
+            if (lastScrollYPosition > headerThreshold) {
+                headerHtml.classList.add(isScrolledClass);
+
+                return;
+            }
+
+            headerHtml.classList.remove(isScrolledClass);
+        };
+
         burgerButton.addEventListener('click', openBurgerListener);
 
-        document.addEventListener('scroll', () => {
-           const lastScrollYPosition: number = window.scrollY;
-           const headerThreshold: number = 40;
-
-           if (lastScrollYPosition > headerThreshold) {
-               headerHtml.classList.add(isScrolledClass);
-
-               return;
-           }
-
-           headerHtml.classList.remove(isScrolledClass);
-        });
+        document.addEventListener('scroll', isScrolled);
+        isScrolled();
 
         for (const link of navLinks) {
             link.addEventListener('click', openBurgerListener);
