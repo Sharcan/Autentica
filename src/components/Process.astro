@@ -3,17 +3,18 @@ import SectionTitle from "./SectionTitle.astro";
 import SectionLayout from "../layouts/SectionLayout.astro";
 import ProcessStep from "./ProcessStep.astro";
 import processStep from "../assets/data/process-step.json";
+import Divider from "./Divider.astro";
 ---
 
 <SectionLayout id="formula" topSection bottomSection>
     <div class="flex column align-center wrapper">
-        <SectionTitle message="Formules" />
+        <SectionTitle message="La méthode" />
 
         <h2 class="title font-display">
             Comment ça fonctionne ?
         </h2>
 
-        <div class="hr"></div>
+        <Divider />
 
         <div class="process flex justify-between">
             {
@@ -39,12 +40,6 @@ import processStep from "../assets/data/process-step.json";
 
     .process-wrapper {
         width: 30%;
-    }
-
-    .hr {
-        width: 100%;
-        height: 1px;
-        background-color: var(--c-taupe);
     }
 
     @media (max-width: 860px) {

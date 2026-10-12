@@ -137,6 +137,10 @@ h3 {
     align-items: center;
 }
 
+.align-end {
+    align-items: flex-end;
+}
+
 .justify-center {
     justify-content: center;
 }
@@ -147,6 +151,22 @@ h3 {
 
 .wrap {
     flex-wrap: wrap;
+}
+
+.g-xs {
+    gap: var(--space-xs);
+}
+
+.g-s {
+    gap: var(--space-s);
+}
+
+.g-m {
+    gap: var(--space-m);
+}
+
+.g-l {
+    gap: var(--space-l);
 }
 
 .skip-link {

@@ -1,0 +1,22 @@
+---
+const { amount, currency } = Astro.props;
+---
+
+{
+    amount && currency && (
+        <>
+            {
+                currency === 'euro' && (
+                    <span class="price font-display">{amount} €</span>
+                )
+            }
+        </>
+    )
+}
+
+<style>
+    .price {
+        font-size: var(--step-4);
+        color: var(--c-terracotta);
+    }
+</style>

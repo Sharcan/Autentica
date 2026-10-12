@@ -1,0 +1,53 @@
+[
+  {
+    "title": "ESSENZA ITALIANA",
+    "amount": "90",
+    "currency": "euro",
+    "slogan": "Vous rêvez de découvrir l’Italie mais vous ne savez pas par où commencer ?",
+    "description": "Je vous aide à poser les bases de votre voyage avec un itinéraire pensé selon vos envies, votre rythme et votre budget.",
+    "tasks": [
+      "Premier échange découverte (30 min)",
+      "Analyse de vos envies & besoins",
+      "Itinéraire personnalisé jour par jour",
+      "Sélection de bonnes adresses locales",
+      "Budget estimatif du séjour",
+      "Liens utiles pour vos réservations",
+      "Carnet de voyage PDF personnalisé"
+    ],
+    "recommended": false
+  },
+  {
+    "title": "Dolce Vita",
+    "amount": "55",
+    "subAmount": "Par jour de voyage",
+    "currency": "euro",
+    "slogan": "Vous souhaitez un voyage organisé dans les moindres détails, sans passer des heures à chercher ?",
+    "description": "Je crée pour vous une expérience italienne authentique avec mes meilleures adresses et mes recommandations personnalisées.",
+    "tasks": [
+      "Tout ce qui est inclus dans Essenza Italiana",
+      "Hôtels, activités, restaurants et conseils pratiques",
+      "Logistique et transports détaillés",
+      "Google Maps personnalisé avec vos adresses",
+      "Conseils pratiques avant votre départ",
+      "Assistance avant votre séjour si besoin"
+    ],
+    "recommended": false
+  },
+  {
+    "title": "La Grande Esperienza",
+    "amount": "75",
+    "subAmount": "Par jour de voyage",
+    "currency": "euro",
+    "slogan": "Vous souhaitez vivre l’Italie comme un local avec un accompagnement privilégié ?",
+    "description": "Une expérience sur mesure avec une attention particulière portée à chaque détail de votre séjour.",
+    "tasks": [
+      "Tout ce qui est inclus dans Dolce Vita",
+      "Assistance réservation et négociation de tarifs",
+      "Assistance WhatsApp pendant votre voyage",
+      "Recommandations ultra-personnalisées",
+      "Sélection d’expériences exclusives",
+      "Surprises locales & attentions spéciales"
+    ],
+    "recommended": true
+  }
+]

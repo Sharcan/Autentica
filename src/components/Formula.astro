@@ -1,0 +1,101 @@
+---
+import Currency from "./Currency.astro";
+import Divider from "./Divider.astro";
+interface Props {
+    title: string;
+    slogan: string;
+    amount: string;
+    subAmount?: string;
+    currency: string;
+    description: string;
+    tasks: string[];
+    recommended: boolean;
+}
+
+const {
+    title,
+    amount,
+    subAmount,
+    currency,
+    slogan,
+    description,
+    tasks ,
+    recommended
+} = Astro.props;
+---
+
+<div class="formula flex column g-s" class:list={{recommended}}>
+    <span class="title uppercase font-display">{title}</span>
+    <div class="flex row align-end g-s price">
+        <Currency amount={amount} currency={currency} class="price" />
+        {
+            subAmount && (
+                <p class="sub-amount uppercase">{subAmount}</p>
+            )
+        }
+    </div>
+    <Divider />
+    <p class="slogan">{slogan}</p>
+    <p>{description}</p>
+
+    <ul class="tasks">
+        { tasks.map((task) => <li>{task}</li>) }
+    </ul>
+</div>
+
+<style>
+    .formula {
+        position: relative;
+        max-width: 350px;
+        border: 1px solid var(--c-sage);
+        padding: var(--space-s) var(--space-m);
+        border-radius: var(--radius-m);
+        background-color: var(--c-limestone);
+    }
+
+    .formula.recommended::before {
+        position: absolute;
+        content: 'Le plus complet';
+        right: 20px;
+        top: -10px;
+        background-color: var(--c-terracotta);
+        border-radius: var(--radius-pill);
+        padding-inline: var(--space-s);
+        color: var(--c-cream);
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: var(--step--1);
+    }
+
+    .formula.recommended {
+        box-shadow: 0 0 12px 0 var(--c-terracotta);
+    }
+
+    .title {
+        font-size: var(--step-2);
+        font-weight: 400;
+    }
+
+    .price {
+        line-height: .85;
+    }
+
+    .slogan {
+        font-weight: 500;
+    }
+
+    .sub-amount {
+        color: var(--c-sage);
+    }
+
+    .tasks > li {
+        display: block;
+        font-size: var(--step--1);
+    }
+
+    .tasks > li::before {
+        content: '✓';
+        margin-right: var(--space-xs);
+        color: var(--c-terracotta);
+    }
+</style>

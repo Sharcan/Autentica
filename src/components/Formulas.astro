@@ -1,0 +1,45 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+import SectionTitle from "./SectionTitle.astro";
+import Divider from "./Divider.astro";
+import Formula from "./Formula.astro";
+import formulas from "../assets/data/formulas.json";
+---
+
+<SectionLayout topSection>
+    <div class="formula flex column align-center">
+        <SectionTitle message="Formules"  />
+
+        <h2 class="title font-display">
+            Trois façons de vous accompagner
+        </h2>
+
+        <Divider />
+
+        <ul class="flex row g-m wrap">
+            {
+                formulas && formulas.map(({
+                                              title, amount, subAmount,
+                                              currency, slogan,
+                                              description, tasks, recommended}) => (
+                    <>
+                        <li>
+                            <Formula title={title} amount={amount} subAmount={subAmount} currency={currency}
+                                     slogan={slogan} description={description} tasks={tasks} recommended={recommended}
+                            />
+                        </li>
+                    </>
+                ))
+            }
+        </ul>
+
+    </div>
+</SectionLayout>
+
+
+<style>
+    .formula {
+        gap: var(--space-m);
+        height: 100dvh;
+    }
+</style>
