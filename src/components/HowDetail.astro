@@ -1,0 +1,46 @@
+---
+import Currency from "./Currency.astro";
+import Divider from "./Divider.astro";
+interface Props {
+    title: string;
+    description: string;
+    amount: number;
+    currency: string;
+    isLast: boolean;
+}
+
+const {title, description, amount, currency, isLast} = Astro.props;
+---
+<>
+    <Divider />
+    <div class="wrapper flex row wrap g-s" class:list={{isLast}}>
+        <div class="sides">
+            <div class="flex column">
+                <span class="title font-display">
+                    {title}
+                </span>
+                <Currency amount={amount} currency={currency} />
+            </div>
+        </div>
+
+        <p class="sides description">
+            {description}
+        </p>
+    </div>
+    {isLast && <Divider />}
+</>
+
+<style>
+    .wrapper {
+        margin-block: 30px;
+    }
+
+    .title {
+        font-size: var(--step-2);
+        font-weight: 400;
+    }
+
+    .sides {
+        flex: 1;
+    }
+</style>

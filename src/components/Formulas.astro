@@ -6,7 +6,7 @@ import Formula from "./Formula.astro";
 import formulas from "../assets/data/formulas.json";
 ---
 
-<SectionLayout topSection>
+<SectionLayout topSection bottomSection>
     <div class="formula flex column align-center">
         <SectionTitle message="Formules"  />
 
@@ -32,7 +32,6 @@ import formulas from "../assets/data/formulas.json";
                 ))
             }
         </ul>
-
     </div>
 </SectionLayout>
 
@@ -40,6 +39,5 @@ import formulas from "../assets/data/formulas.json";
 <style>
     .formula {
         gap: var(--space-m);
-        height: 100dvh;
     }
 </style>

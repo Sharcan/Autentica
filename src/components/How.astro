@@ -1,0 +1,59 @@
+---
+import howDetails from "../assets/data/how-detail.json";
+import SectionLayout from "../layouts/SectionLayout.astro";
+import SectionTitle from "./SectionTitle.astro";
+import HowDetail from "./HowDetail.astro";
+import ButtonTerracota from "./button/ButtonTerracota.astro";
+---
+
+
+<SectionLayout class="container-how" topSection bottomSection>
+    <div class="title-section flex column g-m">
+        <SectionTitle message="Service de conciergerie voyage"  />
+        <h2 class="title font-display">
+            Besoin d’aide sur un point précis de votre voyage ?
+        </h2>
+        <p class="description">
+            Vous n’avez pas besoin d’un voyage entièrement personnalisé ? Je propose également mes
+            services à la carte, pour vous accompagner uniquement sur les étapes qui demandent du
+            temps ou de l’expertise.
+        </p>
+    </div>
+
+    <ul class="how-details">
+        {
+            howDetails && howDetails.length > 0 && howDetails.map(({title, amount, currency, description}, i) => (
+               <>
+                   <li>
+                       <HowDetail title={title} amount={amount} currency={currency} description={description} isLast={i === howDetails.length - 1} />
+                   </li>
+               </>
+            ))
+        }
+    </ul>
+
+    <ButtonTerracota label="Demander un accompagnement" />
+</SectionLayout>
+
+<style>
+    :global(.container-how) {
+        background-color: var(--c-limestone);
+    }
+
+    .title-section {
+        margin-bottom: 3%;
+    }
+
+    .title-section > .title {
+        max-width: 35ch;
+    }
+
+    .title-section > .description {
+        max-width: 65ch;
+        font-size: var(--step-1);
+    }
+
+    .how-details {
+        margin-bottom: 3%;
+    }
+</style>

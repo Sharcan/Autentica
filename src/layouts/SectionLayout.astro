@@ -1,9 +1,9 @@
 ---
-const { topSection = false, bottomSection = false, id } = Astro.props;
+const { topSection = false, bottomSection = false, id, class: className } = Astro.props;
 ---
 
-<section class="wrapper"
-     class:list={{ wrapper: true, 'top-section': topSection, 'bottom-section': bottomSection }}
+<section
+     class:list={['wrapper', {'top-section': topSection, 'bottom-section': bottomSection }, className]}
     id={id}
 >
     <slot />

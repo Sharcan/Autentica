@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Recherche de logement",
+    "amount": 35,
+    "currency": "euro",
+    "description": "Je sélectionne pour vous les meilleures options d’hébergement selon vos critères : budget, dates, emplacement, style de séjour et vos envies. Vous recevez une sélection personnalisée de 3 hébergements recommandés, accompagnée de mes conseils, des points forts de chaque option et des liens directs de réservation."
+  },
+  {
+    "title": "Recherche de transport",
+    "amount": 25,
+    "currency": "euro",
+    "description": "Je recherche les solutions de transport les plus adaptées à votre voyage selon vos préférences : avion, train, bus ou bateau. Vous recevez un document clair avec les différentes options disponibles, les horaires, les informations pratiques et mes recommandations pour vous aider à faire le meilleur choix."
+  },
+  {
+    "title": "Recherche logement + transport ",
+    "amount": 50,
+    "currency": "euro",
+    "description": "Un accompagnement complet pour organiser les deux éléments essentiels de votre voyage. Je recherche pour vous les meilleures combinaisons hébergement + transport afin de vous \nfaire gagner du temps et de partir sereinement avec des options adaptées à votre projet."
+  }
+]
