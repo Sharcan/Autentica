@@ -41,7 +41,7 @@ import ButtonTerracota from "./button/ButtonTerracota.astro";
     }
 
     .title-section {
-        margin-bottom: 3%;
+        margin-bottom: clamp(24px, 4vw, 48px);
     }
 
     .title-section > .title {
@@ -53,7 +53,18 @@ import ButtonTerracota from "./button/ButtonTerracota.astro";
         font-size: var(--step-1);
     }
 
+    @media (max-width: 860px) {
+        .title-section > .title,
+        .title-section > .description {
+            max-width: 100%;
+        }
+
+        .title-section > .description {
+            font-size: var(--step-0);
+        }
+    }
+
     .how-details {
-        margin-bottom: 3%;
+        margin-bottom: clamp(24px, 4vw, 48px);
     }
 </style>

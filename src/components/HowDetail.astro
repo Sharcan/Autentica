@@ -32,7 +32,7 @@ const {title, description, amount, currency, isLast} = Astro.props;
 
 <style>
     .wrapper {
-        margin-block: 30px;
+        margin-block: clamp(16px, 4vw, 30px);
     }
 
     .title {
@@ -41,6 +41,17 @@ const {title, description, amount, currency, isLast} = Astro.props;
     }
 
     .sides {
-        flex: 1;
+        flex: 1 1;
+    }
+
+    @media (max-width: 860px) {
+        .wrapper {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sides {
+            width: 100%;
+        }
     }
 </style>
