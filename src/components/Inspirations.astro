@@ -1,0 +1,141 @@
+---
+
+import SectionLayout from "../layouts/SectionLayout.astro";
+import SectionTitle from "./SectionTitle.astro";
+import Inspiration from "./Inspiration.astro";
+import image28 from "../assets/images/image00028.jpeg";
+import image17 from "../assets/images/image00017.jpeg";
+import image26 from "../assets/images/image00026.jpeg";
+
+
+const photos = [
+    {
+      title: 'Toscane',
+      keyword: ['villages médiévaux', 'domaines viticoles', 'paysages de carte postale'],
+      photo: {
+          src: image28,
+          alt: 'Toscane',
+          width: 1400,
+          wide: true
+      }
+    },
+    {
+        title: 'Pouilles',
+        keyword: ['masserie', 'plages sauvages', 'villages blancs'],
+        photo: {
+            src: image17,
+            alt: 'Pouilles',
+            width: 900,
+            wide: false,
+        }
+    },
+    {
+        title: 'Côte Amalfitaine',
+        keyword: ['villages suspendus', 'villages suspendus'],
+        photo: {
+            src: image26,
+            alt: 'Côte Amalfitaine',
+            width: 900,
+            wide: false,
+        }
+    },
+    {
+        title: 'Sicile',
+        keyword: ['culture', 'gastronomie', 'paysages volcaniques'],
+        photo: {
+            src: image26,
+            alt: 'Sicile',
+            width: 900,
+            wide: false,
+        }
+    },
+    {
+        title: 'Lacs italiens',
+        keyword: ['élégance', 'villas historiques'],
+        photo: {
+            src: image26,
+            alt: 'Lacs italiens',
+            width: 900,
+            wide: false,
+        }
+    }
+];
+---
+
+<SectionLayout paddingInline={false} topSection bottomSection>
+    <div class="wrapper">
+        <div class="top-section flex column align-center g-m">
+            <SectionTitle message="Un univers chaleureux & authentique"  />
+
+            <h2 class="title font-display">
+                Inspirations
+            </h2>
+
+            <p class="description">
+                Des voyages sur mesure, au cœur de l’Italie véritable. Des adresses confidentielles, des rencontres sincères, des émotions inoubliables.
+            </p>
+        </div>
+
+        <ul class="grid">
+            {
+                photos.length > 0 && photos.map((photo, index) => (
+                    <>
+                        <li class:list={{ 'tile': !photo.photo.wide, 'tile__wide': photo.photo.wide}}>
+                            <Inspiration title={photo.title} keywords={photo.keyword} photo={photo.photo} />
+                        </li>
+                    </>
+                ))
+            }
+        </ul>
+    </div>
+</SectionLayout>
+
+<style>
+    .wrapper {
+        padding-inline: var(--space-l);
+    }
+
+    .top-section {
+        margin-bottom: var(--space-xl);
+    }
+
+    .grid {
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(0.75rem, 1.6vw, 1.25rem);
+    }
+
+    .description {
+        font-size: var(--step-1);
+        width: 50ch;
+        color: var(--c-ink);
+        line-height: 1.5;
+    }
+
+    @media (min-width: 900px) {
+        .grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        .tile {
+            grid-column: span 2;
+            min-height: 22rem;
+        }
+
+        .tile__wide {
+            grid-column: span 4;
+            min-height: 26rem;
+        }
+    }
+
+    @media (max-width: 620px) {
+        .grid {
+            grid-template-columns: 1fr;
+        }
+
+        .tile {
+            min-height: 17rem;
+        }
+    }
+</style>

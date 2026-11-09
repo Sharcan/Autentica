@@ -1,0 +1,106 @@
+---
+import { Image } from 'astro:assets';
+
+interface Photo {
+    width: number;
+    src: any;
+    alt: string;
+    wide: boolean;
+}
+
+interface Props {
+    photo: Photo;
+    title: string;
+    keywords: string[];
+}
+
+const { photo, title, keywords } = Astro.props;
+---
+
+<div class="inspiration">
+    <Image src={photo.src}
+           class="inspiration__background"
+           alt="landscape"/>
+    <div class="inspiration__veil" aria-hidden="true" />
+
+    <div class="flex column">
+        <div class="inspiration__title font-display">
+            {title}
+        </div>
+
+        <div>
+            {
+                keywords.length > 0 && keywords.map((keyword) => (
+                    <span class="inspiration__keywords uppercase">{keyword}</span>
+                ))
+            }
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .inspiration {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+
+        border-radius: var(--radius-m);
+        display: flex;
+        align-items: end;
+
+        width: var(--photo-width);
+        height: 35rem;
+
+        padding: var(--space-m);
+    }
+
+    .inspiration:hover > .inspiration__background {
+        transform: scale(1.03);
+    }
+
+    .inspiration__background {
+        object-fit: cover;
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+
+        z-index: -2;
+
+        transition: 800ms all var(--ease);
+    }
+
+    .inspiration__veil {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: linear-gradient(
+                to top,
+                rgb(43 25 16 / 0.88) 0%,
+                rgb(43 25 16 / 0.55) 34%,
+                rgb(43 25 16 / 0.08) 68%,
+                transparent 100%
+        );
+    }
+
+    .inspiration__title {
+        color: var(--c-limestone);
+        font-size: var(--step-4);
+        font-weight: 400;
+    }
+
+    .inspiration__keywords {
+        color: var(--c-sand);
+        margin-left: var(--space-s);
+    }
+
+    .inspiration__keywords:not(:first-child)::before {
+        content: '|';
+        margin-right: var(--space-s);
+    }
+
+    .inspiration__keywords:first-child {
+        margin-left: 0;
+    }
+</style>

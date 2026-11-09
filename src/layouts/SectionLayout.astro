@@ -1,9 +1,9 @@
 ---
-const { topSection = false, bottomSection = false, id, class: className } = Astro.props;
+const { paddingInline = true, topSection = false, bottomSection = false, id, class: className } = Astro.props;
 ---
 
 <section
-     class:list={['wrapper', {'top-section': topSection, 'bottom-section': bottomSection }, className]}
+     class:list={['wrapper', {'padding-inline': paddingInline, 'top-section': topSection, 'bottom-section': bottomSection }, className]}
     id={id}
 >
     <slot />
@@ -12,8 +12,11 @@ const { topSection = false, bottomSection = false, id, class: className } = Astr
 
 <style>
     .wrapper {
-        padding-inline: var(--space-2xl);
         scroll-margin-top: var(--header-h);
+    }
+
+    .padding-inline {
+        padding-inline: var(--space-2xl);
     }
 
     .top-section {
