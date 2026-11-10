@@ -1,12 +1,20 @@
 ---
-import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Layout from "../layouts/Layout.astro";
+import PrivacyPolicies from "../components/PrivacyPolicies.astro";
 ---
 
 <Layout>
-    <Header />
-    <main id="contenu">
-        TO BE DEFINED
+    <main id="contenu" class="wrapper flex column align-center">
+        <PrivacyPolicies />
     </main>
+    <Footer />
 </Layout>
+
+<style>
+    .wrapper {
+        margin-block: var(--header-h);
+        text-align: center;
+        padding-inline: var(--space-2xl);
+    }
+</style>

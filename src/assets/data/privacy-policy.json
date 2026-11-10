@@ -1,0 +1,41 @@
+{
+  "title": "Politique de confidentialité",
+  "lastUpdated": "10/11/2026",
+  "sections": [
+    {
+      "id": "responsable-traitement",
+      "title": "Responsable du traitement",
+      "content": "[Nom / dénomination], [adresse], [email de contact]."
+    },
+    {
+      "id": "donnees-collectees",
+      "title": "Données collectées",
+      "content": "Via le formulaire de contact : [nom, adresse email, message]."
+    },
+    {
+      "id": "finalite-base-legale",
+      "title": "Finalité et base légale",
+      "content": "Ces données servent uniquement à répondre à votre demande. Le traitement repose sur notre intérêt légitime à répondre aux sollicitations que vous nous adressez."
+    },
+    {
+      "id": "duree-conservation",
+      "title": "Durée de conservation",
+      "content": "Vos données sont conservées [durée] à compter du dernier échange, puis supprimées."
+    },
+    {
+      "id": "destinataires",
+      "title": "Destinataires",
+      "content": "Vos données sont destinées au responsable du site. Elles peuvent être traitées par nos prestataires techniques : [hébergeur], qui agissent en tant que sous-traitants."
+    },
+    {
+      "id": "droits",
+      "title": "Vos droits",
+      "content": "Vous disposez d’un droit d’accès, de rectification, d’effacement, d’opposition, de limitation et de portabilité de vos données. Pour les exercer, écrivez à [email]. Vous pouvez aussi introduire une réclamation auprès de la CNIL (www.cnil.fr)."
+    },
+    {
+      "id": "cookies-statistiques",
+      "title": "Cookies et statistiques",
+      "content": "Ce site n’utilise pas de cookies de suivi."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+---
+import privacyPolicy from "../assets/data/privacy-policy.json"
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const { title, lastUpdated, sections } = privacyPolicy;
+---
+<LegalLayout title={title}>
+
+    <p class="legal__updated">Dernière mise à jour : {lastUpdated}</p>
+
+    {
+        sections.map((section) => (
+            <section class="section" id={section.id}>
+                <h2 class="section-title" id={`${section.id}-title`}>{section.title}</h2>
+                <p>{section.content}</p>
+            </section>
+        ))
+    }
+</LegalLayout>
+
+<style>
+    .section:not(:last-child) {
+        margin-bottom: var(--space-m);
+    }
+
+    .section-title {
+        font-size: var(--step-2);
+        color: var(--c-terracotta);
+    }
+</style>

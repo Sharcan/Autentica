@@ -1,0 +1,118 @@
+---
+import legalNotice from "../assets/data/legal-notice.json";
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const { title, intro, sections } = legalNotice;
+---
+
+<LegalLayout title={title}>
+    <p class="intro uppercase">
+        {intro}
+    </p>
+
+    <ul class="sections">
+        {
+            sections.map((section) => (
+                    <li id={section.id} class="section flex column align-center g-s">
+                        <h2 class="section-title font-display">{section.title}</h2>
+
+                        {section.content && (
+                                <p class="paragraph">{section.content}</p>
+                        )}
+
+                        {section.editor && (
+                                <dl class="details">
+                                    <dt>Nom</dt>
+                                    <dd>{section.editor.name}</dd>
+                                    <dt>Adresse</dt>
+                                    <dd>{section.editor.address}</dd>
+                                    <dt>Nationalité</dt>
+                                    <dd>{section.editor.nationality}</dd>
+                                    <dt>Date de naissance</dt>
+                                    <dd>{section.editor.birthDate}</dd>
+                                </dl>
+                        )}
+
+                        {section.host && (
+                                <dl class="details">
+                                    <dt>Société</dt>
+                                    <dd>{section.host.name}</dd>
+                                    <dt>Adresse</dt>
+                                    <dd>{section.host.address}</dd>
+                                    <dt>Contact</dt>
+                                    <dd>{section.host.contact}</dd>
+                                </dl>
+                        )}
+
+                        {section.contact && (
+                                <dl class="details">
+                                    <dt>Téléphone</dt>
+                                    <dd>
+                                        <a href={`tel:${section.contact.phone}`}>
+                                            {section.contact.phone}
+                                        </a>
+                                    </dd>
+                                    <dt>Email</dt>
+                                    <dd>
+                                        <a href={`mailto:${section.contact.email}`}>
+                                            {section.contact.email}
+                                        </a>
+                                    </dd>
+                                    <dt>Courrier</dt>
+                                    <dd>{section.contact.mail}</dd>
+                                </dl>
+                        )}
+                    </li>
+            ))
+        }
+    </ul>
+</LegalLayout>
+
+<style>
+    .title {
+        font-size: var(--step-4);
+    }
+
+    .olive-wrapper {
+        width: 100px;
+        color: var(--c-terracotta);
+    }
+
+    .intro {
+        font-size: var(--step--1);
+        max-width: 100ch;
+    }
+
+    .sections {
+        list-style: none;
+        padding: 0;
+        max-width: 100ch;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-l, 2rem);
+    }
+
+    .section-title {
+        font-size: var(--step-2);
+        color: var(--c-terracotta);
+    }
+
+    .paragraph {
+        font-size: var(--step-0);
+    }
+
+    .details {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        gap: 0.25rem 1rem;
+        font-size: var(--step-0);
+    }
+
+    .details dt {
+        font-weight: 600;
+    }
+
+    .details dd {
+        margin: 0;
+    }
+</style>

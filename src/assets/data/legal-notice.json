@@ -1,0 +1,42 @@
+{
+  "title": "Mentions légales",
+  "intro": "Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l’économie numérique, il est précisé aux utilisateurs du site Autentica l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi.",
+  "sections": [
+    {
+      "id": "edition-du-site",
+      "title": "Édition du site",
+      "content": "Le présent site, accessible à l’URL https://sharcan.github.io/Autentica/ (le « Site »), est édité par :",
+      "editor": {
+        "name": "[NOM]",
+        "address": "[ADRESSE]",
+        "nationality": "Française (France)",
+        "birthDate": "[DATE]"
+      }
+    },
+    {
+      "id": "hebergement",
+      "title": "Hébergement",
+      "content": "Le Site est hébergé par la société [FOURNISSEUR], situé [ADRESSE FOURNISSEUR], (contact téléphonique ou email : +[TEL FOURNISSEUR]).",
+      "host": {
+        "name": "[FOURNISSEUR]",
+        "address": "[ADRESSE FOURNISSEUR]",
+        "contact": "[FOURNISSEUR]"
+      }
+    },
+    {
+      "id": "directeur-publication",
+      "title": "Directeur de publication",
+      "content": "Le Directeur de la publication du Site est [NOM PRENOM].",
+      "publicationDirector": "[NOM PRENOM]"
+    },
+    {
+      "id": "nous-contacter",
+      "title": "Nous contacter",
+      "contact": {
+        "phone": "[TEL]",
+        "email": "[EMAIL]",
+        "mail": "[ADRESSE]"
+      }
+    }
+  ]
+}
