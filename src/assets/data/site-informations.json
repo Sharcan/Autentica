@@ -4,5 +4,10 @@
     "instagram": "----",
     "instagramUrl": "----"
   },
-  "contactSubject": "Demande via le site AUTENTICA"
+  "contactSubject": "Demande via le site AUTENTICA",
+  "siteMeta": {
+    "name": "AUTENTICA",
+    "baseline": "Expériences de voyages sur mesure en Italie",
+    "description": "AUTENTICA conçoit des voyages sur mesure en Italie : itinéraires personnalisés, adresses confidentielles et conciergerie voyage, loin des itinéraires standardisés."
+  }
 }
