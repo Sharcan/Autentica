@@ -51,7 +51,7 @@ const links = [
                 }
             </ul>
 
-            <button class="contact-me-btn">
+            <button class="contact-me-btn" id="contact-btn">
                 Contactez-moi
             </button>
         </nav>
@@ -284,6 +284,8 @@ const links = [
     const navigationHtml : HTMLElement | null = document.querySelector('[data-navigation]');
     const burgerButton: HTMLElement | null = document.getElementById('burger-btn');
     const navLinks: HTMLCollection | null = document.getElementsByClassName('nav__link');
+    const contactMeBtn: HTMLElement | null = document.getElementById('contact-btn');
+
     const isOpenClass: string = 'is-open';
     const isScrolledClass: string = 'is-scrolled';
 
@@ -316,6 +318,12 @@ const links = [
 
             headerHtml.classList.remove(isScrolledClass);
         };
+
+        const contactMe = () => {
+            document.getElementById('contact')?.scrollIntoView();
+        }
+
+        contactMeBtn?.addEventListener('click', contactMe);
 
         burgerButton.addEventListener('click', openBurgerListener);
 
