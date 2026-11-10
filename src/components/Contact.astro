@@ -1,0 +1,358 @@
+---
+import OliveBranch from './OliveBranch.astro';
+import SectionLayout from "../layouts/SectionLayout.astro";
+import SectionTitle from "./SectionTitle.astro";
+import ButtonTerracota from "./button/ButtonTerracota.astro";
+import siteInformations from '../assets/data/site-informations.json'
+---
+
+<SectionLayout paddingInline topSection bottomSection>
+    <div class="section contact" id="contact">
+        <div class="container contact__grid">
+            <div class="panel">
+                <SectionTitle message="Contact"  />
+
+                <h2 class="h2 panel__title">Vous préférez échanger par écrit ?</h2>
+
+                <form class="form" data-contact-form novalidate>
+                    <div class="field">
+                        <label class="field__label" for="nom">Votre nom</label>
+                        <input class="field__input" type="text" id="nom" name="nom" autocomplete="name" required />
+                    </div>
+
+                    <div class="field">
+                        <label class="field__label" for="email">Votre e-mail</label>
+                        <input
+                                class="field__input"
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                        />
+                    </div>
+
+                    <div class="field">
+                        <label class="field__label" for="message">Votre message</label>
+                        <textarea
+                                class="field__input field__input--area"
+                                id="message"
+                                name="message"
+                                rows="6"
+                                maxlength="1200"
+                                required></textarea>
+                    </div>
+
+                    <p class="rgpd">
+                        Ces informations me permettent simplement de vous répondre et d’échanger avec vous au sujet
+                        de votre projet de voyage.
+                    </p>
+
+                    <div class="consent">
+                        <input class="consent__box" type="checkbox" id="consentement" name="consentement" required />
+                        <label class="consent__label" for="consentement">
+                            J’ai lu et j’accepte la
+                            {/* TODO: remplacer par url de politque */}
+                            <a href="#">politique de confidentialité</a>.
+                        </label>
+                    </div>
+
+                    <p class="form__status" role="status" aria-live="polite" data-form-status></p>
+
+                    <ButtonTerracota class="form__submit" type="submit" label="Envoyer" />
+                    
+                    <p class="form__hint">
+                        Votre logiciel de messagerie va s’ouvrir avec le message pré-rempli. Vous pouvez aussi
+                        m’écrire directement à <a href={`mailto:${siteInformations.contact.email}`}>{siteInformations.contact.email}</a>.
+                    </p>
+
+                    <noscript>
+                        <p class="form__noscript">
+                            Ce formulaire a besoin de JavaScript pour préparer votre message. Écrivez-moi
+                            directement à <a href={`mailto:${siteInformations.contact.email}`}>{siteInformations.contact.email}</a>.
+                        </p>
+                    </noscript>
+                </form>
+            </div>
+
+            <div class="aside">
+                <h2 class="h3 aside__title">Me joindre directement</h2>
+
+                <ul class="channels">
+                    <li class="channel">
+                        <span class="channel__label">E-mail</span>
+                        <a class="channel__value" href={`mailto:${siteInformations.contact.email}`}>{siteInformations.contact.email}</a>
+                    </li>
+                    <li class="channel">
+                        <span class="channel__label">Instagram</span>
+                        <a class="channel__value" href={siteInformations.contact.instagramUrl} rel="noopener">
+                            {siteInformations.contact.instagram}
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="reminder">
+                    <span class="reminder__branch"><OliveBranch /></span>
+                    <p class="reminder__text">Premier échange découverte de 30 min offert</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</SectionLayout>
+
+<style>
+    .contact__grid {
+        display: grid;
+        grid-template-columns: 1.35fr 1fr;
+        gap: clamp(2rem, 5vw, 4.5rem);
+        align-items: start;
+    }
+
+    /* Panneau clair de la maquette page 4. */
+    .panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-s);
+        padding: clamp(1.5rem, 4vw, 3rem);
+        background-color: var(--c-limestone);
+        border: 1px solid var(--c-taupe);
+        border-radius: var(--radius-m);
+    }
+
+    .panel__title {
+        text-align: center;
+        max-width: 26ch;
+    }
+
+    .form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-s);
+        margin-top: var(--space-xs);
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.35em;
+    }
+
+    .field__label {
+        font-size: var(--step--1);
+        letter-spacing: 0.06em;
+        color: var(--c-ink-soft);
+    }
+
+    .field__input {
+        width: 100%;
+        padding: 0.8em 1em;
+        background-color: var(--c-cream);
+        border: 1px solid var(--c-taupe);
+        border-radius: var(--radius-s);
+        color: var(--c-ink);
+        transition:
+                border-color 0.25s var(--ease),
+                box-shadow 0.25s var(--ease);
+    }
+
+    .field__input--area {
+        resize: vertical;
+        min-height: 9rem;
+    }
+
+    .field__input:hover {
+        border-color: var(--c-terracotta-soft);
+    }
+
+    .field__input:focus-visible {
+        outline: none;
+        border-color: var(--c-terracotta);
+        box-shadow: 0 0 0 3px rgb(168 84 56 / 0.18);
+    }
+
+    /* Champ signalé en erreur par le script. */
+    .field__input[aria-invalid='true'] {
+        border-color: var(--c-terracotta-deep);
+        background-color: rgb(168 84 56 / 0.06);
+    }
+
+    .rgpd {
+        font-size: var(--step--1);
+        line-height: 1.55;
+        color: var(--c-ink-soft);
+    }
+
+    .consent {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.7em;
+        align-items: start;
+        padding: 0.9em 1em;
+        background-color: var(--c-cream);
+        border: 1px solid var(--c-taupe);
+        border-radius: var(--radius-s);
+    }
+
+    .consent__box {
+        width: 1.05rem;
+        height: 1.05rem;
+        margin: 0.18em 0 0;
+        accent-color: var(--c-terracotta-deep);
+    }
+
+    .consent__label {
+        font-size: var(--step--1);
+        line-height: 1.5;
+        color: var(--c-ink);
+    }
+
+    .consent:has(.consent__box[aria-invalid='true']) {
+        border-color: var(--c-terracotta-deep);
+    }
+
+    .form__status {
+        font-size: var(--step--1);
+        color: var(--c-terracotta-ink);
+        font-weight: 500;
+    }
+
+    /* Le message n'occupe pas de place tant qu'il est vide. */
+    .form__status:empty {
+        display: none;
+    }
+
+    .form__submit {
+        align-self: start;
+    }
+
+    .form__hint,
+    .form__noscript {
+        font-size: var(--step--1);
+        line-height: 1.55;
+        color: var(--c-ink-soft);
+    }
+
+    .aside {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-m);
+        padding-top: var(--space-s);
+    }
+
+    .channels {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .channel {
+        display: flex;
+        flex-direction: column;
+        gap: 0.15em;
+        padding-block: var(--space-s);
+        border-bottom: 1px solid var(--c-taupe);
+    }
+
+    .channel:first-child {
+        border-top: 1px solid var(--c-taupe);
+    }
+
+    .channel__label {
+        font-size: 0.66rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--c-ink-soft);
+    }
+
+    .channel__value {
+        font-family: var(--font-display);
+        font-size: var(--step-1);
+        color: var(--c-terracotta-ink);
+        text-decoration: none;
+    }
+
+    .channel__value:hover {
+        text-decoration: underline;
+    }
+
+    .reminder {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-xs);
+        padding: var(--space-m);
+        background-color: var(--c-olive);
+        border-radius: var(--radius-m);
+        color: var(--c-cream);
+    }
+
+    .reminder__branch {
+        display: block;
+        width: 80px;
+        color: var(--c-sand);
+    }
+
+    .reminder__text {
+        font-family: var(--font-display);
+        font-size: var(--step-2);
+        font-weight: 300;
+        line-height: 1.2;
+        max-width: 20ch;
+    }
+
+    @media (max-width: 900px) {
+        .contact__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<script is:inline define:vars={{ recipient: siteInformations.contact.email, subject: siteInformations.contactSubject }}>
+    const form = document.querySelector('[data-contact-form]');
+    const status = document.querySelector('[data-form-status]');
+
+    if (form && status) {
+        /** @type {Record<string, string>} */
+        const messages = {
+            nom: 'Merci d’indiquer votre nom.',
+            email: 'Merci d’indiquer une adresse e-mail valide.',
+            message: 'Merci d’écrire quelques mots sur votre projet.',
+            consentement: 'Merci d’accepter la politique de confidentialité.',
+        };
+
+        const fields = ['nom', 'email', 'message', 'consentement'].map((name) => form.elements[name]);
+
+        const clearError = (field) => field.removeAttribute('aria-invalid');
+        fields.forEach((field) => {
+            field.addEventListener('input', () => clearError(field));
+            field.addEventListener('change', () => clearError(field));
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const invalid = fields.find((field) => !field.checkValidity());
+
+            if (invalid) {
+                fields.forEach(clearError);
+                invalid.setAttribute('aria-invalid', 'true');
+                status.textContent = messages[invalid.name];
+                invalid.focus();
+                return;
+            }
+
+            fields.forEach(clearError);
+
+            const nom = form.elements['nom'].value.trim();
+            const email = form.elements['email'].value.trim();
+            const message = form.elements['message'].value.trim();
+
+            const body = [`Nom : ${nom}`, `E-mail : ${email}`, '', message].join('\n');
+            const href = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            status.textContent = 'Votre logiciel de messagerie va s’ouvrir…';
+            window.location.href = href;
+        });
+    }
+</script>

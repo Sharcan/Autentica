@@ -1,11 +1,13 @@
 ---
 interface Props {
     label: string;
+    type?: "submit" | "reset" | "button";
+    class?: string;
 }
 
-const { label } = Astro.props;
+const { label, type, class: className } = Astro.props;
 ---
-<button class="btn uppercase">
+<button class={`btn uppercase ${className || ""}`} type={type}>
     {label}
 </button>
 
