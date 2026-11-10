@@ -1,6 +1,7 @@
 ---
-
-import OliveBranch from "./OliveBranch.astro";---
+import OliveBranch from "./OliveBranch.astro";
+import siteInformations from "../assets/data/site-informations.json"
+---
 
 
 <section class="citation flex column justify-center align-center">
@@ -9,11 +10,11 @@ import OliveBranch from "./OliveBranch.astro";---
     </div>
 
     <p class="font-display">
-        Le véritable voyage de découverte ne consiste pas à chercher de nouveaux paysages, mais à avoir de nouveaux yeux.
+        {siteInformations.citation.message}
     </p>
 
     <span class="author font-display">
-        Marcel Proust
+        {siteInformations.citation.author}
     </span>
 </section>
 

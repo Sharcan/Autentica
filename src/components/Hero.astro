@@ -1,6 +1,7 @@
 ---
 import Image from "astro/components/Image.astro";
 import landingItalia from "../assets/images/landing_italia.jpg";
+import siteInformations from "../assets/data/site-informations.json"
 ---
 
 <section class="hero flex align-center">
@@ -8,7 +9,7 @@ import landingItalia from "../assets/images/landing_italia.jpg";
     <div class="hero-img-wrapper"></div>
 
     <div class="hero-content flex column">
-        <p class="top-title">Expériences de voyages sur mesure en Italie</p>
+        <p class="top-title">{siteInformations.siteMeta.baseline}</p>
 
         <h1 class="title">L’Italie comme vous ne l’avez jamais imaginée</h1>
 

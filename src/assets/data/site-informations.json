@@ -8,6 +8,11 @@
   "siteMeta": {
     "name": "AUTENTICA",
     "baseline": "Expériences de voyages sur mesure en Italie",
+    "shortBaseLine": "Voyages sur mesure en Italie",
     "description": "AUTENTICA conçoit des voyages sur mesure en Italie : itinéraires personnalisés, adresses confidentielles et conciergerie voyage, loin des itinéraires standardisés."
+  },
+  "citation": {
+    "message": "Le véritable voyage de découverte ne consiste pas à chercher de nouveaux paysages, mais à avoir de nouveaux yeux.",
+    "author": "Marcel Proust"
   }
 }
