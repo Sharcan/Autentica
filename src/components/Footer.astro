@@ -5,15 +5,18 @@ import legalsLinks from '../assets/data/legals-links.json'
 import siteInformations from '../assets/data/site-informations.json'
 
 const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL;
+
+const withBase = (path: string) => `${base}/${path.replace(/^\/+/, '')}`;
 ---
 
 <footer class="footer">
     <div class="container footer__inner">
-        <div class="footer__brand">
+        <a href={base} class="footer__brand">
             <span class="footer__branch"><OliveBranch /></span>
             <p class="footer__wordmark">{siteInformations.siteMeta.name}</p>
             <p class="footer__baseline">{siteInformations.siteMeta.baseline}</p>
-        </div>
+        </a>
 
         <nav class="footer__col" aria-label="Navigation du pied de page">
             <h2 class="footer__title">Le voyage</h2>
@@ -21,7 +24,7 @@ const year = new Date().getFullYear();
                 {
                     links.map((link) => (
                             <li>
-                                <a class="footer__link" href={link.href}>
+                                <a class="footer__link" href={withBase(link.href)}>
                                     {link.label}
                                 </a>
                             </li>
@@ -50,7 +53,7 @@ const year = new Date().getFullYear();
             {
                 legalsLinks.map((link) => (
                         <li>
-                            <a class="footer__link" href={link.href}>
+                            <a class="footer__link" href={withBase(link.href)}>
                                 {link.label}
                             </a>
                         </li>

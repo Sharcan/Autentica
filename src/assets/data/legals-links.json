@@ -1,10 +1,10 @@
 [
   {
-    "href": "Autentica/legal-notice",
+    "href": "legal-notice",
     "label": "Mentions Légales"
   },
   {
-    "href": "Autentica/privacy-policy",
+    "href": "privacy-policy",
     "label": "Politique de confidentialités"
   }
 ]
