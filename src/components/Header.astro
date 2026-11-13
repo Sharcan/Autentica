@@ -1,6 +1,7 @@
 ---
 import links from '../assets/data/nav-links.json'
 import siteInformations from "../assets/data/site-informations.json"
+import {buttonClassName} from "../helpers/scroll-to-contact-section.helper.ts";
 ---
 
 <header data-header class="container">
@@ -33,7 +34,7 @@ import siteInformations from "../assets/data/site-informations.json"
                 }
             </ul>
 
-            <button class="contact-me-btn" id="contact-btn">
+            <button class="contact-me-btn" class:list={buttonClassName}>
                 Contactez-moi
             </button>
         </nav>
@@ -262,11 +263,12 @@ import siteInformations from "../assets/data/site-informations.json"
 </style>
 
 <script>
+    import {scrollToContactSectionHelper} from "../helpers/scroll-to-contact-section.helper.ts";
+
     const headerHtml: HTMLElement | null = document.querySelector('[data-header]');
     const navigationHtml : HTMLElement | null = document.querySelector('[data-navigation]');
     const burgerButton: HTMLElement | null = document.getElementById('burger-btn');
     const navLinks: HTMLCollection | null = document.getElementsByClassName('nav__link');
-    const contactMeBtn: HTMLElement | null = document.getElementById('contact-btn');
 
     const isOpenClass: string = 'is-open';
     const isScrolledClass: string = 'is-scrolled';
@@ -301,12 +303,6 @@ import siteInformations from "../assets/data/site-informations.json"
             headerHtml.classList.remove(isScrolledClass);
         };
 
-        const contactMe = () => {
-            document.getElementById('contact')?.scrollIntoView();
-        }
-
-        contactMeBtn?.addEventListener('click', contactMe);
-
         burgerButton.addEventListener('click', openBurgerListener);
 
         document.addEventListener('scroll', isScrolled);
@@ -315,5 +311,7 @@ import siteInformations from "../assets/data/site-informations.json"
         for (const link of navLinks) {
             link.addEventListener('click', openBurgerListener);
         }
+
+        scrollToContactSectionHelper('contact-btn');
     }
 </script>

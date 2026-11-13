@@ -1,7 +1,8 @@
 ---
 import Image from "astro/components/Image.astro";
 import landingItalia from "../assets/images/landing_italia.jpg";
-import siteInformations from "../assets/data/site-informations.json"
+import siteInformations from "../assets/data/site-informations.json";
+import {buttonClassName} from "../helpers/scroll-to-contact-section.helper.ts";
 ---
 
 <section class="hero flex align-center">
@@ -19,12 +20,11 @@ import siteInformations from "../assets/data/site-informations.json"
         </p>
 
         <div class="top-action flex row">
-
             <button class="learn-more">
                 En savoir plus
             </button>
 
-            <button class="contact-me">
+            <button class="contact-me" class:list={buttonClassName}>
                 Contactez-moi
             </button>
         </div>

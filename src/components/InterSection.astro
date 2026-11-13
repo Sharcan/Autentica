@@ -1,5 +1,6 @@
 ---
 import firstRdv from "../assets/data/first-rdv.json";
+import {buttonClassName} from "../helpers/scroll-to-contact-section.helper.ts";
 ---
 
 <section class="inter-section">
@@ -9,7 +10,7 @@ import firstRdv from "../assets/data/first-rdv.json";
         </p>
 
         <div>
-            <button class="book-btn uppercase">
+            <button class="book-btn uppercase" class:list={buttonClassName}>
                 Réserver mon échange
             </button>
         </div>

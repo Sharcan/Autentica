@@ -1,6 +1,8 @@
 ---
 import Currency from "./Currency.astro";
 import Divider from "./Divider.astro";
+import {buttonClassName} from "../helpers/scroll-to-contact-section.helper.ts";
+
 interface Props {
     title: string;
     slogan: string;
@@ -43,7 +45,7 @@ const {
     </ul>
 
     <div>
-        <button class="book-btn uppercase" class:list={{recommended}}>
+        <button class="book-btn uppercase" class:list={[{recommended}, buttonClassName]}>
             Créer mon échange
         </button>
     </div>
